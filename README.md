@@ -1,4 +1,4 @@
-# Terraform Module: AWS EC2 Basic Layout
+# Terraform Module: AWS GuardDuty Multi-Account Setup
 
 ## Overview
 
