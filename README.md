@@ -1,9 +1,9 @@
 <div align="center">
-    <img src="https://raw.githubusercontent.com/binbashar/terraform-aws-ec2-basic-layout/master/figures/binbash-logo.png"
+    <img src="https://raw.githubusercontent.com/binbashar/terraform-aws-guardduty-multiaccount/master/figures/binbash-logo.png"
      alt="binbash" width="250"/>
 </div>
 <div align="right">
-  <img src="https://raw.githubusercontent.com/binbashar/terraform-aws-ec2-basic-layout/master/figures/binbash-leverage-terraform-logo.png"
+  <img src="https://raw.githubusercontent.com/binbashar/terraform-aws-guardduty-multiaccount/master/figures/binbash-leverage-terraform-logo.png"
   alt="leverage" width="130"/>
 </div>
 
@@ -139,10 +139,10 @@ docker run --rm -v /home/delivery/Binbash/repos/Leverage/terraform/terraform-aws
 ### CircleCi PR auto-release job
 
 <div align="left">
-  <img src="https://raw.githubusercontent.com/binbashar/terraform-aws-ec2-basic-layout/master/figures/circleci-logo.png"
+  <img src="https://raw.githubusercontent.com/binbashar/terraform-aws-guardduty-multiaccount/master/figures/circleci-logo.png"
    alt="circleci" width="130"/>
 </div>
 
-- [**pipeline-job**](https://circleci.com/gh/binbashar/terraform-aws-ec2-basic-layout) (**NOTE:** Will only run after merged PR)
-- [**releases**](https://github.com/binbashar/terraform-aws-ec2-basic-layout/releases)
-- [**changelog**](https://github.com/binbashar/terraform-aws-ec2-basic-layout/blob/master/CHANGELOG.md)
+- [**pipeline-job**](https://circleci.com/gh/binbashar/terraform-aws-guardduty-multiaccount) (**NOTE:** Will only run after merged PR)
+- [**releases**](https://github.com/binbashar/terraform-aws-guardduty-multiaccount/releases)
+- [**changelog**](https://github.com/binbashar/terraform-aws-guardduty-multiaccount/blob/master/CHANGELOG.md)
