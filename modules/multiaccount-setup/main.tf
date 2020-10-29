@@ -4,8 +4,8 @@
 # when you set this account as a delegated admin.
 #
 resource "aws_guardduty_detector" "this" {
-  enable                        = var.guarduty_enabled
-  finding_publishing_frequency  = var.guarduty_finding_publishing_frequency
+  enable                       = var.guarduty_enabled
+  finding_publishing_frequency = var.guarduty_finding_publishing_frequency
 }
 
 # Set auto_enable to true if you want GuardDuty to be enabled in all of your
@@ -20,8 +20,8 @@ resource "aws_guardduty_organization_configuration" "this" {
 # Note: a lifecycle is used because email and invite trigger changes every time.
 #
 resource "aws_guardduty_member" "members" {
-  for_each    = var.guardduty_member_accounts
-  
+  for_each = var.guardduty_member_accounts
+
   account_id  = can(each.value.account_id) ? each.value.account_id : null
   detector_id = aws_guardduty_detector.this.id
   email       = can(each.value.email) ? each.value.email : null
