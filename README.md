@@ -13,28 +13,9 @@
 
 This Terraform module can be used to implement AWS GuardDuty in a multi-account setup. That is designating a GuardDuty delegated admin account and then configuring the rest of GuardDuty in such account.
 
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-## Requirements
-
-| Name | Version |
-|------|---------|
-
-## Providers
-
-| Name | Version |
-|------|---------|
-
-## Inputs
-
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
-
-## Outputs
-
-| Name | Description |
-|------|-------------|
-
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+# Modules
+* [delegated-admin](modules/delegated-admins)
+* [multiaccount-setup](modules/multiaccount-setup)
 
 ## Examples
 
