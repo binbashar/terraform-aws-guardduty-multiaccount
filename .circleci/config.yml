@@ -26,8 +26,30 @@ jobs:
             git update-index --assume-unchanged "Makefile"
 
       - run:
-          name: Validate Terraform format
-          command: make format-check
+          name: test-dependencies
+          command: |
+            #
+            # Install pre-commit
+            pip install pre-commit
+            #
+            # Install terraform
+            sudo apt-get install unzip
+            wget https://releases.hashicorp.com/terraform/${TERRAFORM_VER}/terraform_${TERRAFORM_VER}_linux_amd64.zip
+            unzip terraform_${TERRAFORM_VER}_linux_amd64.zip
+            sudo mv terraform /usr/local/bin/
+            terraform --version
+            #
+            # Install terraform-docs
+            sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+            curl -Lo ./terraform-docs https://github.com/terraform-docs/terraform-docs/releases/download/v0.10.1/terraform-docs-v0.10.1-$(uname | tr '[:upper:]' '[:lower:]')-amd64
+            chmod +x ./terraform-docs
+            sudo mv ./terraform-docs /usr/local/bin/terraform-docs
+
+      - run:
+          name: test1-terraform-format-and-docs
+          command: |
+            cd modules/delegated-admin && make pre-commit && cd ..
+            cd modules/multiaccount-setup && make pre-commit
 
       - run:
           name: Install awscli
@@ -55,9 +77,10 @@ jobs:
             cp /home/circleci/.aws/config /home/circleci/.aws/bb/config
 
       - run:
-          name: Lint Terraform code
-          command: make tflint-deep
-
+          name: test2-terraform-linting
+          command: |
+            cd modules/delegated-admin && make tflint-deep && cd ..
+            cd modules/multiaccount-setup && make tflint-deep
 
   #
   # Release
@@ -107,6 +130,7 @@ jobs:
 #
 orbs:
   sumologic: circleci/sumologic@1.0.6
+  slack: circleci/slack@4.1.1
 
 #
 # Jobs workflow

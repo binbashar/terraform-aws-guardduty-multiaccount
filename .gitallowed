@@ -1,4 +1,3 @@
 # https://github.com/awslabs/git-secrets
-README.md
-/modules/delegated-admin/README.md
-/modules/multiaccount-setup/README.md
+*README.md
+examples/*/main.tf
