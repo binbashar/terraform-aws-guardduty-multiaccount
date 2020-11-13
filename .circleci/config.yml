@@ -92,7 +92,22 @@ jobs:
 
       - slack/notify:
           channel: $SLACK_DEFAULT_CHANNEL
-
+          custom: |
+            {
+              "blocks": [
+                {
+                  "type": "section",
+                  "fields": [
+                    {
+                      "type": "plain_text",
+                      "text": "*This is a text notification*",
+                      "emoji": true
+                    }
+                  ]
+                }
+              ]
+            }
+          event: always
   #
   # Release
   #
@@ -137,6 +152,22 @@ jobs:
 
       - slack/notify:
           channel: $SLACK_DEFAULT_CHANNEL
+          custom: |
+            {
+              "blocks": [
+                {
+                  "type": "section",
+                  "fields": [
+                    {
+                      "type": "plain_text",
+                      "text": "*This is a text notification*",
+                      "emoji": true
+                    }
+                  ]
+                }
+              ]
+            }
+          event: always
 
 #
 # CircleCI orbs are open-source, shareable packages of parameterizable reusable
