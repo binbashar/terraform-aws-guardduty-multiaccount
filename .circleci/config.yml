@@ -91,7 +91,6 @@ jobs:
             cd modules/multiaccount-setup && make tflint-deep
 
       - slack/notify:
-          channel: $SLACK_DEFAULT_CHANNEL
           custom: |
             {
               "blocks": [
@@ -151,7 +150,6 @@ jobs:
             fi
 
       - slack/notify:
-          channel: $SLACK_DEFAULT_CHANNEL
           custom: |
             {
               "blocks": [
