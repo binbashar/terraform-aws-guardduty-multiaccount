@@ -46,12 +46,12 @@ jobs:
             sudo mv ./terraform-docs /usr/local/bin/terraform-docs
 
       - run:
-          name: test1-terraform-format-and-docs-mod-a
+          name: test-terraform-format-and-docs-delegated-admin-mod
           command: |
             cd modules/delegated-admin && make pre-commit
 
       - run:
-          name: test1-terraform-format-and-docs-mod-b
+          name: test-terraform-format-and-docs-multiaccount-setup-mod
           command: |
             cd modules/multiaccount-setup && make pre-commit
 
@@ -81,21 +81,17 @@ jobs:
             cp /home/circleci/.aws/config /home/circleci/.aws/bb/config
 
       - run:
-          name: test2-terraform-linting-mod-a
+          name: test-terraform-linting-delegated-admin-mod
           command: |
             cd modules/delegated-admin && make tflint-deep
 
       - run:
-          name: test2-terraform-linting-mod-b
+          name: test-terraform-linting-multiaccount-setup-mod
           command: |
             cd modules/multiaccount-setup && make tflint-deep
 
       - slack/status:
           webhook: ${SLACK_WEBHOOK}
-
-      - heroku/slack-notify-success-fail-with-data:
-          title: Slack Notif
-          webhook-url: ${SLACK_WEBHOOK}
 
   #
   # Release
@@ -142,10 +138,6 @@ jobs:
       - slack/status:
           webhook: ${SLACK_WEBHOOK}
 
-      - heroku/slack-notify-success-fail-with-data:
-          title: Slack Notif
-          webhook-url: ${SLACK_WEBHOOK}
-
 #
 # CircleCI orbs are open-source, shareable packages of parameterizable reusable
 # configuration elements, including jobs, commands, and executors.
@@ -153,7 +145,6 @@ jobs:
 orbs:
   sumologic: circleci/sumologic@1.0.6
   slack: slack/slack@1.0.4
-  slack-notify-success-fail-with-data: heroku/slack-notify-success-fail-with-data@1.0.1
 
 #
 # Jobs workflow
