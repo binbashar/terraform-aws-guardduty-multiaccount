@@ -86,9 +86,12 @@ jobs:
             cd modules/delegated-admin && make tflint-deep
 
       - run:
-          name: test2-terraform-linting-mad-b
+          name: test2-terraform-linting-mod-b
           command: |
             cd modules/multiaccount-setup && make tflint-deep
+
+      - slack/notify:
+          channel: $SLACK_DEFAULT_CHANNEL
 
   #
   # Release
@@ -131,6 +134,9 @@ jobs:
               echo "$(git status)"
               echo "==============================================================================================="
             fi
+
+      - slack/notify:
+          channel: $SLACK_DEFAULT_CHANNEL
 
 #
 # CircleCI orbs are open-source, shareable packages of parameterizable reusable
