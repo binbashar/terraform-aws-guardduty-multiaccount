@@ -107,7 +107,7 @@ jobs:
               ]
             }
           event: always
-          channel: tools-ci
+          channel: 'tools-ci'
 
   #
   # Release
@@ -168,7 +168,7 @@ jobs:
               ]
             }
           event: always
-          channel: tools-ci
+          channel: 'tools-ci'
 
 #
 # CircleCI orbs are open-source, shareable packages of parameterizable reusable
