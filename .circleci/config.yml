@@ -92,6 +92,7 @@ jobs:
 
       - slack/notify:
           channel: $SLACK_DEFAULT_CHANNEL
+          context: binbashar-org-global-context
 
   #
   # Release
@@ -137,6 +138,7 @@ jobs:
 
       - slack/notify:
           channel: $SLACK_DEFAULT_CHANNEL
+          context: binbashar-org-global-context
 
 #
 # CircleCI orbs are open-source, shareable packages of parameterizable reusable
