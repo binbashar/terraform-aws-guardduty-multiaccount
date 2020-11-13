@@ -79,7 +79,7 @@ jobs:
       - run:
           name: test2-terraform-linting
           command: |
-            cd modules/delegated-admin && make tflint-deep && cd ..
+            cd modules/delegated-admin && make tflint-deep
             cd modules/multiaccount-setup && make tflint-deep
 
   #
