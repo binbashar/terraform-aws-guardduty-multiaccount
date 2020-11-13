@@ -91,22 +91,13 @@ jobs:
             cd modules/multiaccount-setup && make tflint-deep
 
       - slack/notify:
-          custom: |
-            {
-              "blocks": [
-                {
-                  "type": "section",
-                  "fields": [
-                    {
-                      "type": "plain_text",
-                      "text": "*This is a text notification*",
-                      "emoji": true
-                    }
-                  ]
-                }
-              ]
-            }
-          event: always
+          event: fail
+          mentions: '@leverage-support'
+          template: basic_fail_1
+          channel: 'tools-ci'
+      - slack/notify:
+          event: pass
+          template: success_tagged_deploy_1
           channel: 'tools-ci'
 
   #
@@ -152,22 +143,13 @@ jobs:
             fi
 
       - slack/notify:
-          custom: |
-            {
-              "blocks": [
-                {
-                  "type": "section",
-                  "fields": [
-                    {
-                      "type": "plain_text",
-                      "text": "*This is a text notification*",
-                      "emoji": true
-                    }
-                  ]
-                }
-              ]
-            }
-          event: always
+          event: fail
+          mentions: '@leverage-support'
+          template: basic_fail_1
+          channel: 'tools-ci'
+      - slack/notify:
+          event: pass
+          template: success_tagged_deploy_1
           channel: 'tools-ci'
 
 #
