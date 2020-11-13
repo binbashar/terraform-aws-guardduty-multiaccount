@@ -46,9 +46,13 @@ jobs:
             sudo mv ./terraform-docs /usr/local/bin/terraform-docs
 
       - run:
-          name: test1-terraform-format-and-docs
+          name: test1-terraform-format-and-docs-mod-a
           command: |
             cd modules/delegated-admin && make pre-commit
+
+      - run:
+          name: test1-terraform-format-and-docs-mod-b
+          command: |
             cd modules/multiaccount-setup && make pre-commit
 
       - run:
@@ -77,9 +81,13 @@ jobs:
             cp /home/circleci/.aws/config /home/circleci/.aws/bb/config
 
       - run:
-          name: test2-terraform-linting
+          name: test2-terraform-linting-mod-a
           command: |
             cd modules/delegated-admin && make tflint-deep
+
+      - run:
+          name: test2-terraform-linting-mad-b
+          command: |
             cd modules/multiaccount-setup && make tflint-deep
 
   #
