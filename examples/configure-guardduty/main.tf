@@ -1,7 +1,7 @@
 #
 # Configure GuardDuty: this is intended to be done from an account that has
 # been designated to be a GuardDuty delegated admin.
-# 
+#
 # Important: since designating a GuardDuty delegated admin account automatically
 # enables GuardDuty in that account, you will need to import
 # "module.guardduty.aws_guardduty_detector.this" before you can properly use
