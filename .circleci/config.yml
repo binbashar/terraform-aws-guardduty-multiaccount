@@ -2,7 +2,7 @@ version: 2.1
 
 jobs:
   #
-  # Test 1 & Test 2
+  # Automated Tests
   #
   test-static-code-and-linting:
     machine:
@@ -90,8 +90,15 @@ jobs:
           command: |
             cd modules/multiaccount-setup && make tflint-deep
 
-      - slack/status:
-          webhook: ${SLACK_WEBHOOK}
+      - slack/notify:
+          event: fail
+          mentions: '@leverage-support'
+          template: basic_fail_1
+          channel: 'tools-ci'
+      - slack/notify:
+          event: pass
+          template: success_tagged_deploy_1
+          channel: 'tools-ci'
 
   #
   # Release
@@ -135,8 +142,15 @@ jobs:
               echo "==============================================================================================="
             fi
 
-      - slack/status:
-          webhook: ${SLACK_WEBHOOK}
+      - slack/notify:
+          event: fail
+          mentions: '@leverage-support'
+          template: basic_fail_1
+          channel: 'tools-ci'
+      - slack/notify:
+          event: pass
+          template: success_tagged_deploy_1
+          channel: 'tools-ci'
 
 #
 # CircleCI orbs are open-source, shareable packages of parameterizable reusable
@@ -144,7 +158,7 @@ jobs:
 #
 orbs:
   sumologic: circleci/sumologic@1.0.6
-  slack: slack/slack@1.0.4
+  slack: circleci/slack@4.1.1
 
 #
 # Jobs workflow
