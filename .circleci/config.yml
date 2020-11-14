@@ -113,13 +113,13 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "*Project*: $CIRCLE_PROJECT_REPONAME \\n *User*: $CIRCLE_PR_USERNAME \\n *Job*: ($CIRCLE_JOB) in *repo* $CIRCLE_PROJECT_REPONAME ($CIRCLE_BRANCH | $CIRCLE_PULL_REQUEST | $CIRCLE_SHA1)"
+                    "text": "*Project*: $CIRCLE_PROJECT_REPONAME \n *User*: $CIRCLE_PR_USERNAME \n *Job*: ($CIRCLE_JOB) in *repo* $CIRCLE_PROJECT_REPONAME \n *branch* $CIRCLE_BRANCH | *pr* $CIRCLE_PULL_REQUEST | *last commit* $CIRCLE_SHA1)"
                   },
                   "accessory": {
                     "type": "button",
                     "text": {
                       "type": "plain_text",
-                      "text": ":arrow_forward: View Job",
+                      "text": ":arrow_forward: View Job in CircleCi",
                       "emoji": true
                     },
                     "value": "click_me_123",
@@ -196,13 +196,13 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "*Project*: $CIRCLE_PROJECT_REPONAME \\n *User*: $CIRCLE_PR_USERNAME \\n *Job*: ($CIRCLE_JOB) in *repo* $CIRCLE_PROJECT_REPONAME ($CIRCLE_BRANCH | $CIRCLE_PULL_REQUEST | $CIRCLE_SHA1)"
+                    "text": "*Project*: $CIRCLE_PROJECT_REPONAME \n *User*: $CIRCLE_PR_USERNAME \n *Job*: ($CIRCLE_JOB) in *repo* $CIRCLE_PROJECT_REPONAME \n *branch* $CIRCLE_BRANCH | *pr* $CIRCLE_PULL_REQUEST | *last commit* $CIRCLE_SHA1)"
                   },
                   "accessory": {
                     "type": "button",
                     "text": {
                       "type": "plain_text",
-                      "text": ":arrow_forward: View Job",
+                      "text": ":arrow_forward: View Job in CircleCi",
                       "emoji": true
                     },
                     "value": "click_me_123",
