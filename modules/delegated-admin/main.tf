@@ -4,5 +4,5 @@ resource "aws_guardduty_detector" "this" {
 }
 
 resource "aws_guardduty_organization_admin_account" "this" {
-                      admin_account_id = var.guardduty_delegated_admin_account_id
+  admin_account_id = var.guardduty_delegated_admin_account_id
 }
