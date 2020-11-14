@@ -149,7 +149,38 @@ jobs:
           channel: 'tools-ci'
       - slack/notify:
           event: pass
-          template: success_tagged_deploy_1
+          #template: success_tagged_deploy_1
+          custom: |
+            {
+              "blocks": [
+                {
+                  "type": "header",
+                  "text": {
+                    "type": "plain_text",
+                    "text": "Successful Pipeline! :heavy_check_mark: :checkered_flag: :tada:",
+                    "emoji": true
+                  }
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "*Project*: $CIRCLE_PROJECT_REPONAME \\n*User*: $CIRCLE_PR_USERNAME \\n*Workflow*: ($CIRCLE_JOB) in $CIRCLE_PR_REPONAME ($CIRCLE_BRANCH | $CIRCLE_PULL_REQUEST | $CIRCLE_SHA1)"
+                  },
+                  "accessory": {
+                    "type": "button",
+                    "text": {
+                      "type": "plain_text",
+                      "text": ":arrow_forward: View Job",
+                      "emoji": true
+                    },
+                    "value": "click_me_123",
+                    "url": "$CIRCLE_BUILD_URL",
+                    "action_id": "button-action"
+                  }
+                }
+              ]
+            }
           channel: 'tools-ci'
 
 #
