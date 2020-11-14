@@ -100,7 +100,7 @@ jobs:
                   "type": "header",
                   "text": {
                     "type": "plain_text",
-                    "text": "Failed Pipeline! :negative_squared_cross_mark::rotating_light::fire::bash-fire::bangbang::video-games-doom-mad::stopp:",
+                    "text": "Failed Pipeline! :rotating_light::fire::bash-fire::bangbang::video-games-doom-mad::stopp:",
                     "emoji": true
                   }
                 },
@@ -108,7 +108,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": ":bangbang: *Project*: $CIRCLE_PROJECT_REPONAME \n :bangbang: *User*: $CIRCLE_USERNAME \n :bangbang: *Job*: $CIRCLE_JOB in *repo* $CIRCLE_PROJECT_REPONAME \n :bangbang: *Branch:* $CIRCLE_BRANCH \n :bangbang: *PR:* $CIRCLE_PULL_REQUEST \n :bangbang: *Last Commit:* $CIRCLE_SHA1"
+                    "text": ":negative_squared_cross_mark: *Project*: $CIRCLE_PROJECT_REPONAME \n :negative_squared_cross_mark: *User*: $CIRCLE_USERNAME \n :negative_squared_cross_mark: *Job*: $CIRCLE_JOB in *repo* $CIRCLE_PROJECT_REPONAME \n :negative_squared_cross_mark: *Branch:* $CIRCLE_BRANCH \n :negative_squared_cross_mark: *PR:* $CIRCLE_PULL_REQUEST \n :negative_squared_cross_mark: *Last Commit:* $CIRCLE_SHA1"
                   },
                   "accessory": {
                     "type": "button",
@@ -212,7 +212,7 @@ jobs:
                   "type": "header",
                   "text": {
                     "type": "plain_text",
-                    "text": "Failed Pipeline! :negative_squared_cross_mark::rotating_light::fire::bash-fire::bangbang::video-games-doom-mad::stopp:",
+                    "text": "Failed Pipeline! :rotating_light::fire::bash-fire::bangbang::video-games-doom-mad::stopp:",
                     "emoji": true
                   }
                 },
@@ -220,7 +220,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": ":bangbang: *Project*: $CIRCLE_PROJECT_REPONAME \n :bangbang: *User*: $CIRCLE_USERNAME \n :bangbang: *Job*: $CIRCLE_JOB in *repo* $CIRCLE_PROJECT_REPONAME \n :bangbang: *Branch:* $CIRCLE_BRANCH \n :bangbang: *PR:* $CIRCLE_PULL_REQUEST \n :bangbang: *Last Commit:* $CIRCLE_SHA1"
+                    "text": ":negative_squared_cross_mark: *Project*: $CIRCLE_PROJECT_REPONAME \n :negative_squared_cross_mark: *User*: $CIRCLE_USERNAME \n :negative_squared_cross_mark: *Job*: $CIRCLE_JOB in *repo* $CIRCLE_PROJECT_REPONAME \n :negative_squared_cross_mark: *Branch:* $CIRCLE_BRANCH \n :negative_squared_cross_mark: *PR:* $CIRCLE_PULL_REQUEST \n :negative_squared_cross_mark: *Last Commit:* $CIRCLE_SHA1"
                   },
                   "accessory": {
                     "type": "button",
