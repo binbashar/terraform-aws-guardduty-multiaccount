@@ -105,7 +105,7 @@ jobs:
                   "type": "header",
                   "text": {
                     "type": "plain_text",
-                    "text": "Successful Pipeline! :heavy_check_mark: :checkered_flag: :tada:",
+                    "text": "Successful Pipeline! :heavy_check_mark: :checkered_flag: :video-games-star: :tada:",
                     "emoji": true
                   }
                 },
@@ -113,7 +113,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "*Project*: $CIRCLE_PROJECT_REPONAME \n *User*: $CIRCLE_USERNAME \n *Job*: $CIRCLE_JOB in *repo* $CIRCLE_PROJECT_REPONAME \n *branch* $CIRCLE_BRANCH | *pr* $CIRCLE_PULL_REQUEST | *last commit* $CIRCLE_SHA1"
+                    "text": "*Project*: $CIRCLE_PROJECT_REPONAME \n *User*: $CIRCLE_USERNAME \n *Job*: $CIRCLE_JOB in *repo* $CIRCLE_PROJECT_REPONAME \n *Branch* $CIRCLE_BRANCH \n *PR* $CIRCLE_PULL_REQUEST \n *Last Commit* $CIRCLE_SHA1"
                   },
                   "accessory": {
                     "type": "button",
@@ -188,7 +188,7 @@ jobs:
                   "type": "header",
                   "text": {
                     "type": "plain_text",
-                    "text": "Successful Pipeline! :heavy_check_mark: :checkered_flag: :tada:",
+                    "text": "Successful Pipeline! :heavy_check_mark: :checkered_flag: :video-games-star: :tada:",
                     "emoji": true
                   }
                 },
@@ -196,7 +196,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "*Project*: $CIRCLE_PROJECT_REPONAME \n *User*: $CIRCLE_USERNAME \n *Job*: $CIRCLE_JOB in *repo* $CIRCLE_PROJECT_REPONAME \n *branch* $CIRCLE_BRANCH | *pr* $CIRCLE_PULL_REQUEST | *last commit* $CIRCLE_SHA1"
+                    "text": "*Project*: $CIRCLE_PROJECT_REPONAME \n *User*: $CIRCLE_USERNAME \n *Job*: $CIRCLE_JOB in *repo* $CIRCLE_PROJECT_REPONAME \n *Branch* $CIRCLE_BRANCH \n *PR* $CIRCLE_PULL_REQUEST \n *Last Commit* $CIRCLE_SHA1"
                   },
                   "accessory": {
                     "type": "button",
