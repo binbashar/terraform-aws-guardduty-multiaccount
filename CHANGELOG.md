@@ -7,6 +7,23 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.0.6"></a>
+## [v0.0.6] - 2020-11-15
+
+- BBL-440 | rolling back sintaxt to get tests passing
+- BBL-440 | improving failed notif
+- BBL-440 | forcing job to fail to check slack notif
+- BBL-440 | slack notif in place
+- BBL-440 | updating both pass and fail slack notif
+- BBL-440 | adding emojis to slack notif :)
+- BBL-440 | improving circle slack notif stintaxt
+- BBL-440 | fixing username var at circleci slack notif
+- BBL-440 | circleci slack notif sintaxt improved
+- BBL-440 | replacing circle to slack username var
+- BBL-440 | improving slack notif
+- BBL-440 | updating slack ci notif template
+
+
 <a name="v0.0.5"></a>
 ## [v0.0.5] - 2020-11-14
 
@@ -62,7 +79,8 @@ All notable changes to this project will be documented in this file.
 - Initial commit
 
 
-[Unreleased]: https://github.com/binbashar/terraform-aws-guardduty-multiaccount/compare/v0.0.5...HEAD
+[Unreleased]: https://github.com/binbashar/terraform-aws-guardduty-multiaccount/compare/v0.0.6...HEAD
+[v0.0.6]: https://github.com/binbashar/terraform-aws-guardduty-multiaccount/compare/v0.0.5...v0.0.6
 [v0.0.5]: https://github.com/binbashar/terraform-aws-guardduty-multiaccount/compare/v0.0.4...v0.0.5
 [v0.0.4]: https://github.com/binbashar/terraform-aws-guardduty-multiaccount/compare/v0.0.3...v0.0.4
 [v0.0.3]: https://github.com/binbashar/terraform-aws-guardduty-multiaccount/compare/v0.0.2...v0.0.3
