@@ -301,5 +301,3 @@ workflows:
                - master
       - sumologic/workflow-collector:
           context: binbashar-org-global-context
-          requires:
-            - release-version-with-changelog
