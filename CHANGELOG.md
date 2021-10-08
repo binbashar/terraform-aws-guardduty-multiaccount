@@ -7,6 +7,12 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.0.8"></a>
+## [v0.0.8] - 2021-10-08
+
+- Create FUNDING.yml
+
+
 <a name="v0.0.7"></a>
 ## [v0.0.7] - 2020-11-16
 
@@ -85,7 +91,8 @@ All notable changes to this project will be documented in this file.
 - Initial commit
 
 
-[Unreleased]: https://github.com/binbashar/terraform-aws-guardduty-multiaccount/compare/v0.0.7...HEAD
+[Unreleased]: https://github.com/binbashar/terraform-aws-guardduty-multiaccount/compare/v0.0.8...HEAD
+[v0.0.8]: https://github.com/binbashar/terraform-aws-guardduty-multiaccount/compare/v0.0.7...v0.0.8
 [v0.0.7]: https://github.com/binbashar/terraform-aws-guardduty-multiaccount/compare/v0.0.6...v0.0.7
 [v0.0.6]: https://github.com/binbashar/terraform-aws-guardduty-multiaccount/compare/v0.0.5...v0.0.6
 [v0.0.5]: https://github.com/binbashar/terraform-aws-guardduty-multiaccount/compare/v0.0.4...v0.0.5
