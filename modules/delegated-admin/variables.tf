@@ -4,6 +4,12 @@ variable "guarduty_enabled" {
   description = "Whether to enable GuardDuty or not."
 }
 
+variable "guarduty_s3_protection_enabled" {
+  type        = bool
+  default     = true
+  description = "Whether to enable GuardDuty S3 protection or not."
+}
+
 variable "guarduty_finding_publishing_frequency" {
   type        = string
   default     = "SIX_HOURS"
