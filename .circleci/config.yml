@@ -46,7 +46,7 @@ jobs:
             chmod +x terraform-docs
             sudo mv ./terraform-docs /usr/local/bin/terraform-docs
             terraform-docs --version
-            
+
       - run:
           name: test-terraform-format-and-docs-delegated-admin-mod
           command: |
