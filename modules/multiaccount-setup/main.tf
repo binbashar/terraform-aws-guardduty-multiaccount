@@ -6,6 +6,12 @@
 resource "aws_guardduty_detector" "this" {
   enable                       = var.guarduty_enabled
   finding_publishing_frequency = var.guarduty_finding_publishing_frequency
+
+  datasources {
+    s3_logs {
+      enable = var.guarduty_s3_protection_enabled
+    }
+  }
 }
 
 # Set auto_enable to true if you want GuardDuty to be enabled in all of your
