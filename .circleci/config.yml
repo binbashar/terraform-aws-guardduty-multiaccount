@@ -5,8 +5,8 @@ jobs:
   # Automated Tests
   #
   test-static-code-and-linting:
-    machine:
-      image: ubuntu-1604:202007-01 # Ubuntu 16.04, Docker v19.03.12, Docker Compose v1.26.1
+    machine: # https://circleci.com/docs/2.0/configuration-reference/#available-machine-images
+      image: ubuntu-2004:202107-01 # Ubuntu 16.04, Docker v19.03.12, Docker Compose v1.26.1
 
       # This job has been blocked because Docker Layer Caching is not available on your plan.
       # Should upgrade if necessary.
@@ -30,20 +30,22 @@ jobs:
           command: |
             #
             # Install pre-commit
-            pip install pre-commit
+            sudo -H pip3 install pre-commit
             #
             # Install terraform
-            sudo apt-get install unzip
-            wget https://releases.hashicorp.com/terraform/${TERRAFORM_VER}/terraform_${TERRAFORM_VER}_linux_amd64.zip
-            unzip terraform_${TERRAFORM_VER}_linux_amd64.zip
+            sudo apt-get install unzip curl
+            curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+            wget https://releases.hashicorp.com/terraform/${TERRAFORM_VER_REF_ARCH}/terraform_${TERRAFORM_VER_REF_ARCH}_linux_amd64.zip
+            unzip terraform_${TERRAFORM_VER_REF_ARCH}_linux_amd64.zip
             sudo mv terraform /usr/local/bin/
             terraform --version
             #
             # Install terraform-docs
-            sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
-            curl -Lo ./terraform-docs https://github.com/terraform-docs/terraform-docs/releases/download/v0.10.1/terraform-docs-v0.10.1-$(uname | tr '[:upper:]' '[:lower:]')-amd64
-            chmod +x ./terraform-docs
+            curl -sSLo ./terraform-docs.tar.gz https://terraform-docs.io/dl/v0.16.0/terraform-docs-v0.16.0-$(uname)-amd64.tar.gz
+            tar -xzf terraform-docs.tar.gz
+            chmod +x terraform-docs
             sudo mv ./terraform-docs /usr/local/bin/terraform-docs
+            terraform-docs --version
 
       - run:
           name: test-terraform-format-and-docs-delegated-admin-mod
@@ -57,7 +59,7 @@ jobs:
 
       - run:
           name: Install awscli
-          command: sudo -H pip install awscli
+          command: sudo -H pip3 install awscli
 
       - run:
           name: Configure awscli
@@ -79,16 +81,6 @@ jobs:
             # moving credentials to specific project folder
             cp /home/circleci/.aws/credentials /home/circleci/.aws/bb/credentials
             cp /home/circleci/.aws/config /home/circleci/.aws/bb/config
-
-      - run:
-          name: test-terraform-linting-delegated-admin-mod
-          command: |
-            cd modules/delegated-admin && make tflint-deep
-
-      - run:
-          name: test-terraform-linting-multiaccount-setup-mod
-          command: |
-            cd modules/multiaccount-setup && make tflint-deep
 
       - slack/notify:
           event: fail
@@ -165,7 +157,7 @@ jobs:
   #
   release-version-with-changelog:
     machine:
-      image: ubuntu-1604:202007-01
+      image: ubuntu-2004:202107-01 # Ubuntu 16.04, Docker v19.03.12, Docker Compose v1.26.1
       docker_layer_caching: false
 
     environment:
