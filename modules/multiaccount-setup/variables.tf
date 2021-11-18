@@ -18,8 +18,14 @@ variable "guarduty_finding_publishing_frequency" {
 
 variable "guardduty_organization_members_auto_enable" {
   type        = bool
-  default     = true
+  default     = false
   description = "Whether to automatically enable GuardDuty on organization members or not."
+}
+
+variable "guarduty_organization_memebers_s3_protection_auto_enable" {
+  type        = bool
+  default     = false
+  description = "Whether to automatically enable GuardDuty S3 protection on organization members or not."
 }
 
 variable "guardduty_member_accounts" {
