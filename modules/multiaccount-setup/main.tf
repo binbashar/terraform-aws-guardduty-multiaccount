@@ -22,7 +22,7 @@ resource "aws_guardduty_organization_configuration" "this" {
 
   datasources {
     s3_logs {
-      auto_enable = var.guarduty_organization_memebers_s3_protection_auto_enable
+      auto_enable = var.guardduty_organization_members_s3_protection_auto_enable
     }
   }
 }

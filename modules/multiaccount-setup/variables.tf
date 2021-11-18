@@ -22,7 +22,7 @@ variable "guardduty_organization_members_auto_enable" {
   description = "Whether to automatically enable GuardDuty on organization members or not."
 }
 
-variable "guarduty_organization_memebers_s3_protection_auto_enable" {
+variable "guardduty_organization_members_s3_protection_auto_enable" {
   type        = bool
   default     = false
   description = "Whether to automatically enable GuardDuty S3 protection on organization members or not."
