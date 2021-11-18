@@ -19,6 +19,12 @@ resource "aws_guardduty_detector" "this" {
 resource "aws_guardduty_organization_configuration" "this" {
   auto_enable = var.guardduty_organization_members_auto_enable
   detector_id = aws_guardduty_detector.this.id
+
+  datasources {
+    s3_logs {
+      enable = var.guarduty_organization_memebers_s3_protection_auto_enable
+    }
+  }
 }
 
 #
