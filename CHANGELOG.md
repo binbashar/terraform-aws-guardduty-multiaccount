@@ -7,8 +7,19 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.1.1"></a>
+## [v0.1.1] - 2022-08-23
+
+- Update README.md
+
+
 <a name="v0.0.12"></a>
 ## [v0.0.12] - 2021-11-18
+
+
+
+<a name="v0.1.0"></a>
+## [v0.1.0] - 2021-11-18
 
 - updating README.md with terraform docs
 - Merge branch 'master' of github.com:binbashar/terraform-aws-guardduty-multiaccount
@@ -126,8 +137,10 @@ All notable changes to this project will be documented in this file.
 - Initial commit
 
 
-[Unreleased]: https://github.com/binbashar/terraform-aws-guardduty-multiaccount/compare/v0.0.12...HEAD
-[v0.0.12]: https://github.com/binbashar/terraform-aws-guardduty-multiaccount/compare/v0.0.11...v0.0.12
+[Unreleased]: https://github.com/binbashar/terraform-aws-guardduty-multiaccount/compare/v0.1.1...HEAD
+[v0.1.1]: https://github.com/binbashar/terraform-aws-guardduty-multiaccount/compare/v0.0.12...v0.1.1
+[v0.0.12]: https://github.com/binbashar/terraform-aws-guardduty-multiaccount/compare/v0.1.0...v0.0.12
+[v0.1.0]: https://github.com/binbashar/terraform-aws-guardduty-multiaccount/compare/v0.0.11...v0.1.0
 [v0.0.11]: https://github.com/binbashar/terraform-aws-guardduty-multiaccount/compare/v0.0.10...v0.0.11
 [v0.0.10]: https://github.com/binbashar/terraform-aws-guardduty-multiaccount/compare/v0.0.9...v0.0.10
 [v0.0.9]: https://github.com/binbashar/terraform-aws-guardduty-multiaccount/compare/v0.0.8...v0.0.9
