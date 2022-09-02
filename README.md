@@ -102,7 +102,7 @@ terraform import module.guardduty.aws_guardduty_detector.this $(aws guardduty li
 
 ```
 
-- #### When you are using `BinBash Leverage-cli`
+- #### When you are using `binbash Leverage-cli`
 ```shell
 ## 1: Configure your AWS config & credentials files for your current project
 
