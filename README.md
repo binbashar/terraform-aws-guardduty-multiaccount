@@ -76,13 +76,15 @@ module "guardduty" {
 ### Import Detector Module 
 To import the above module, you need to know the AWS GuardDuty Detector ID was enabled in the delegation process on the selected admin account. You can use aws-cli to quickly get these attributes
 
+- Install [aws-cli]
 
 - #### When you are using only `Terraform` (without a cli/wrapper tool)
-```
-# 1: Get AWS GuardDuty Detector ID
-➜ aws guardduty list-detectors --profile [AWS_PROFILE]
+```shell
+## 1: Get AWS GuardDuty Detector ID
 
-# 2: You should see a an output like this
+aws guardduty list-detectors --profile [AWS_PROFILE]
+
+## 2: You should see a an output like this
 
 {
     "DetectorIds": [
@@ -90,25 +92,28 @@ To import the above module, you need to know the AWS GuardDuty Detector ID was e
     ]
 }
 
-# 3: Replace DETECTOR_ID and run Terraform import
+## 3: Replace DETECTOR_ID and run Terraform import
+
 terraform import module.guardduty.aws_guardduty_detector.this [DETECTOR_ID] 
 
-# Optional All-in-one Import Command
+## Optional All-in-one Import Command
+
 terraform import module.guardduty.aws_guardduty_detector.this $(aws guardduty list-detectors --profile [AWS_PROFILE] --query 'DetectorIds[0]') 
 
 ```
 
 - #### When you are using `BinBash Leverage-cli`
-```
-# 1: Configure your AWS config & credentials files for your current project
+```shell
+## 1: Configure your AWS config & credentials files for your current project
 
 export AWS_CONFIG_FILE=~/.aws/[PROJECT]/config
 export AWS_SHARED_CREDENTIALS_FILE=~/.aws/[PROJECT]/credentials
 
-# 2: Get AWS GuardDuty Detector ID
+## 2: Get AWS GuardDuty Detector ID
+
 ➜ aws guardduty list-detectors --profile [AWS_PROFILE]
 
-# 3: You should see a an output like this
+## 3: You should see a an output like this
 
 {
     "DetectorIds": [
@@ -116,10 +121,12 @@ export AWS_SHARED_CREDENTIALS_FILE=~/.aws/[PROJECT]/credentials
     ]
 }
 
-# 4: Replace DETECTOR_ID and run Leverage Terraform import
+## 4: Replace DETECTOR_ID and run Leverage Terraform import
+
 leverage terraform import module.guardduty.aws_guardduty_detector.this [DETECTOR_ID]
 
-# Optional All-in-one Import Command
+## Optional All-in-one Import Command
+
 leverage terraform import module.guardduty.aws_guardduty_detector.this $(aws guardduty list-detectors --profile [AWS_PROFILE] --query 'DetectorIds[0]') 
 
 ```
@@ -176,3 +183,6 @@ docker run --rm -v /home/delivery/Binbash/repos/Leverage/terraform/terraform-aws
 - [**pipeline-job**](https://circleci.com/gh/binbashar/terraform-aws-guardduty-multiaccount) (**NOTE:** Will only run after merged PR)
 - [**releases**](https://github.com/binbashar/terraform-aws-guardduty-multiaccount/releases)
 - [**changelog**](https://github.com/binbashar/terraform-aws-guardduty-multiaccount/blob/master/CHANGELOG.md)
+
+
+[aws-cli]: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
