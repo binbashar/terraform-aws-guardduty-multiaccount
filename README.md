@@ -111,7 +111,7 @@ export AWS_SHARED_CREDENTIALS_FILE=~/.aws/[PROJECT]/credentials
 
 ## 2: Get AWS GuardDuty Detector ID
 
-➜ aws guardduty list-detectors --profile [AWS_PROFILE]
+aws guardduty list-detectors --profile [AWS_PROFILE]
 
 ## 3: You should see a an output like this
 
