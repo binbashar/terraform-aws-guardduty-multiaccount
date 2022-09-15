@@ -6,23 +6,39 @@ repos:
 - repo: https://github.com/pre-commit/pre-commit-hooks
   rev: v4.0.1
   hooks:
-  - id: check-added-large-files
-    args: ['--maxkb=500']
-  - id: check-executables-have-shebangs
-  - id: pretty-format-json
-    args: ['--autofix', '--no-sort-keys', '--indent=2']
-  - id: check-byte-order-marker
-  - id: check-case-conflict
-  - id: check-executables-have-shebangs
-  - id: check-merge-conflict
-  - id: check-symlinks
-  - id: detect-private-key
-  - id: check-merge-conflict
-  - id: detect-aws-credentials
-    args: ['--allow-missing-credentials']
-  - id: trailing-whitespace
+      - id: check-json
+      - id: check-merge-conflict
+      - id: check-yaml
+      - id: detect-private-key
+      - id: pretty-format-json
+        args:
+          - --autofix
+      - id: trailing-whitespace
+        args:
+          - --markdown-linebreak-ext=md
 - repo: https://github.com/antonbabenko/pre-commit-terraform
   rev: v1.55.0
   hooks:
   - id: terraform_fmt
   - id: terraform_docs
+
+# repos:
+#   - repo: https://github.com/pre-commit/pre-commit-hooks
+#     rev: v4.0.1
+#     hooks:
+#       - id: check-json
+#       - id: check-merge-conflict
+#       - id: check-yaml
+#       - id: detect-private-key
+#       - id: pretty-format-json
+#         args:
+#           - --autofix
+#       - id: trailing-whitespace
+#         args:
+#           - --markdown-linebreak-ext=md
+
+#   - repo: git://github.com/antonbabenko/pre-commit-terraform
+#     rev: v1.55.0
+#     hooks:
+#       - id: terraform_fmt
+#       - id: terraform_docs
