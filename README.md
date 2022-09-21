@@ -73,7 +73,7 @@ module "guardduty" {
 ```
 **Important:** It is correct that the account delegated as GuardDuty Admin (commonly Security) is not added in the `guardduty_member_accounts` list.
 
-### Import Detector Module 
+### Import Detector Module
 To import the above module, you need to know the AWS GuardDuty Detector ID was enabled in the delegation process on the selected admin account. You can use aws-cli to quickly get these attributes
 
 - Install [aws-cli]
@@ -94,11 +94,11 @@ aws guardduty list-detectors --profile [AWS_PROFILE]
 
 ## 3: Replace DETECTOR_ID and run Terraform import
 
-terraform import module.guardduty.aws_guardduty_detector.this [DETECTOR_ID] 
+terraform import module.guardduty.aws_guardduty_detector.this [DETECTOR_ID]
 
 ## Optional All-in-one Import Command
 
-terraform import module.guardduty.aws_guardduty_detector.this $(aws guardduty list-detectors --profile [AWS_PROFILE] --query 'DetectorIds[0]') 
+terraform import module.guardduty.aws_guardduty_detector.this $(aws guardduty list-detectors --profile [AWS_PROFILE] --query 'DetectorIds[0]')
 
 ```
 
@@ -127,7 +127,7 @@ leverage terraform import module.guardduty.aws_guardduty_detector.this [DETECTOR
 
 ## Optional All-in-one Import Command
 
-leverage terraform import module.guardduty.aws_guardduty_detector.this $(aws guardduty list-detectors --profile [AWS_PROFILE] --query 'DetectorIds[0]') 
+leverage terraform import module.guardduty.aws_guardduty_detector.this $(aws guardduty list-detectors --profile [AWS_PROFILE] --query 'DetectorIds[0]')
 
 ```
 

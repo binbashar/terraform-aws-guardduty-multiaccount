@@ -33,6 +33,8 @@ No modules.
 | <a name="input_guardduty_delegated_admin_account_id"></a> [guardduty\_delegated\_admin\_account\_id](#input\_guardduty\_delegated\_admin\_account\_id) | The account id of the account that will be GuardDuty's delegated admin. | `number` | n/a | yes |
 | <a name="input_guarduty_enabled"></a> [guarduty\_enabled](#input\_guarduty\_enabled) | Whether to enable GuardDuty or not. | `bool` | `true` | no |
 | <a name="input_guarduty_finding_publishing_frequency"></a> [guarduty\_finding\_publishing\_frequency](#input\_guarduty\_finding\_publishing\_frequency) | The frequency of findings publishing. | `string` | `"SIX_HOURS"` | no |
+| <a name="input_guarduty_kubernetes_protection_enabled"></a> [guarduty\_kubernetes\_protection\_enabled](#input\_guarduty\_kubernetes\_protection\_enabled) | Whether to enable Kubernetes protection or not. | `bool` | `true` | no |
+| <a name="input_guarduty_malware_protection_enabled"></a> [guarduty\_malware\_protection\_enabled](#input\_guarduty\_malware\_protection\_enabled) | Whether to enable Malware protection or not. | `bool` | `true` | no |
 | <a name="input_guarduty_s3_protection_enabled"></a> [guarduty\_s3\_protection\_enabled](#input\_guarduty\_s3\_protection\_enabled) | Whether to enable GuardDuty S3 protection or not. | `bool` | `true` | no |
 
 ## Outputs
