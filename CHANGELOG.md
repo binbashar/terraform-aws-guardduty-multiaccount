@@ -7,6 +7,39 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.2.0"></a>
+## [v0.2.0] - 2022-09-21
+
+- Feature | Add AWS GuardDuty Kubernetes and Malware Protection for Multi-Account Setup (with Delegated Malware Protection Admin)
+- Change Kubernetes Protection Enabled variable name for Organizations Members
+- Prune variables.tf
+- Prune .pre-commit-config.yaml
+- Prune and format code by pre-commit lint
+- Add references to configuration settings on Active Core Services at AWS Organizations level
+- Change release scope from patch to minor
+- Run pre-commit and update README.md (terraform_docs)
+- Update constraints for AWS Terraform Provider and change to false defaults values for S3, Kubernetes and Malware Protection
+- Update example for multi-account setup
+- Change argument name for kubernetes datasource
+- Fix variable name
+- Change made by pre-commit hook
+- Add configuration required for kubernetes and malware protection on multi-account setup
+- Change made by pre-commit hook
+- Back to previous pre-commit-hook version
+- Remove inputs descriptions
+- Add Kubernetes and Malware protection config block con boolean enabled/disabled variable
+- Change hooks ids
+- Remove terraform_tflint
+- Remove terraform_tflint
+- Change pre-commit repo url
+- Change pre-commit to test
+- Change url pre-commit repo
+- Format name (to lowercase)
+- Fix - Clean example command line
+- Update shell examples in README.md
+- Update steps related to the delegation and import guardduty detector
+
+
 <a name="v0.1.1"></a>
 ## [v0.1.1] - 2022-08-23
 
@@ -137,7 +170,8 @@ All notable changes to this project will be documented in this file.
 - Initial commit
 
 
-[Unreleased]: https://github.com/binbashar/terraform-aws-guardduty-multiaccount/compare/v0.1.1...HEAD
+[Unreleased]: https://github.com/binbashar/terraform-aws-guardduty-multiaccount/compare/v0.2.0...HEAD
+[v0.2.0]: https://github.com/binbashar/terraform-aws-guardduty-multiaccount/compare/v0.1.1...v0.2.0
 [v0.1.1]: https://github.com/binbashar/terraform-aws-guardduty-multiaccount/compare/v0.0.12...v0.1.1
 [v0.0.12]: https://github.com/binbashar/terraform-aws-guardduty-multiaccount/compare/v0.1.0...v0.0.12
 [v0.1.0]: https://github.com/binbashar/terraform-aws-guardduty-multiaccount/compare/v0.0.11...v0.1.0
