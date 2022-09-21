@@ -40,7 +40,7 @@ variable "guardduty_organization_members_s3_protection_auto_enable" {
   description = "Whether to automatically enable GuardDuty S3 protection on organization members or not."
 }
 
-variable "guardduty_organization_members_kubernetes_protection_auto_enable" {
+variable "guardduty_organization_members_kubernetes_protection_enable" {
   type        = bool
   default     = false
   description = "Whether to automatically enable GuardDuty Kubernetes protection on organization members or not."

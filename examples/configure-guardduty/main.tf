@@ -23,10 +23,10 @@ module "guardduty" {
   guarduty_malware_protection_enabled    = true
 
   # New Org Accounts will have Guardduty & S3 Protection automatically enabled
-  guardduty_organization_members_auto_enable                       = true
-  guardduty_organization_members_s3_protection_auto_enable         = true
-  guardduty_organization_members_kubernetes_protection_auto_enable = true
-  guardduty_organization_members_malware_protection_auto_enable    = true
+  guardduty_organization_members_auto_enable                    = true
+  guardduty_organization_members_s3_protection_auto_enable      = true
+  guardduty_organization_members_kubernetes_protection_enable   = true
+  guardduty_organization_members_malware_protection_auto_enable = true
 
   # Pre-existing Org Accounts (already members) have to be declared below
   guardduty_member_accounts = {
