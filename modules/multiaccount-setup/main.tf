@@ -39,7 +39,7 @@ resource "aws_guardduty_organization_configuration" "this" {
 
     kubernetes {
       audit_logs {
-        auto_enable = var.guardduty_organization_members_kubernetes_protection_auto_enable
+        enable = var.guardduty_organization_members_kubernetes_protection_auto_enable
       }
     }
     malware_protection {
