@@ -53,6 +53,12 @@ enables GuardDuty in that account, you will need to import
 "module.guardduty.aws_guardduty_detector.this" before you can properly use
 this example.
 
+In order to enable Malware Protection from the delegated Admin account,
+make sure you have activated at the organizational level
+the Service Principal: malware-protection.guardduty.amazonaws.com
+- Reference document: [malware-protection]
+- Leverage Reference Architecture: [Terraform Code Reference]
+
 ```terraform
 #
 # GuardDuty is enabled in this account as a delegated admin
@@ -208,3 +214,5 @@ docker run --rm -v /home/delivery/Binbash/repos/Leverage/terraform/terraform-aws
 
 
 [aws-cli]: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+[malware-protection]: https://docs.aws.amazon.com/guardduty/latest/ug/malware-protection
+[Terraform Code Reference]: https://github.com/binbashar/le-tf-infra-aws/blob/master/management/global/organizations/organization.tf#L6
