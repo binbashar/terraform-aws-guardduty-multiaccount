@@ -6,8 +6,20 @@ variable "guarduty_enabled" {
 
 variable "guarduty_s3_protection_enabled" {
   type        = bool
-  default     = true
+  default     = true // false
   description = "Whether to enable GuardDuty S3 protection or not."
+}
+
+variable "guarduty_kubernetes_protection_enabled" {
+  type        = bool
+  default     = true // false
+  description = "Whether to enable Kubernetes protection or not."
+}
+
+variable "guarduty_malware_protection_enabled" {
+  type        = bool
+  default     = true // false
+  description = "Whether to enable Malware protection or not."
 }
 
 variable "guarduty_finding_publishing_frequency" {
@@ -26,6 +38,18 @@ variable "guardduty_organization_members_s3_protection_auto_enable" {
   type        = bool
   default     = false
   description = "Whether to automatically enable GuardDuty S3 protection on organization members or not."
+}
+
+variable "guardduty_organization_members_kubernetes_protection_auto_enable" {
+  type        = bool
+  default     = false
+  description = "Whether to automatically enable GuardDuty Kubernetes protection on organization members or not."
+}
+
+variable "guardduty_organization_members_malware_protection_auto_enable" {
+  type        = bool
+  default     = false
+  description = "Whether to automatically enable GuardDuty Malware protection on organization members or not."
 }
 
 variable "guardduty_member_accounts" {
