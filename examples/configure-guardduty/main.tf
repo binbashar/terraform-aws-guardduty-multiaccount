@@ -7,8 +7,8 @@
 # "module.guardduty.aws_guardduty_detector.this" before you can properly use
 # this example.
 #
-# In order to enable Malware Protection from the delegated Admin account, 
-# make sure you have activated at the organizational level 
+# In order to enable Malware Protection from the delegated Admin account,
+# make sure you have activated at the organizational level
 # the Service Principal: malware-protection.guardduty.amazonaws.com
 # Reference document https://docs.aws.amazon.com/guardduty/latest/ug/malware-protection.html#:~:text=Establishing%20trusted%20access%20to%20enable%20Malware%20Protection
 # Leverage Reference Architecture https://github.com/binbashar/le-tf-infra-aws/blob/master/management/global/organizations/organization.tf#L6
