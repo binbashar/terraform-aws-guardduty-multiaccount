@@ -10,8 +10,19 @@
 module "guardduty" {
   source = "../../modules/multiaccount-setup"
 
-  guarduty_enabled                           = true
-  guardduty_organization_members_auto_enable = false
+  # Activating Guardduty & S3 protection in this account (security-account).
+  guarduty_enabled                       = true
+  guarduty_s3_protection_enabled         = true
+  guarduty_kubernetes_protection_enabled = true
+  guarduty_malware_protection_enabled    = true
+
+  # New Org Accounts will have Guardduty & S3 Protection automatically enabled
+  guardduty_organization_members_auto_enable                       = true
+  guardduty_organization_members_s3_protection_auto_enable         = true
+  guardduty_organization_members_kubernetes_protection_auto_enable = true
+  guardduty_organization_members_malware_protection_auto_enable    = true
+
+  # Pre-existing Org Accounts (already members) have to be declared below
   guardduty_member_accounts = {
     shared = {
       account_id = 222222222222
