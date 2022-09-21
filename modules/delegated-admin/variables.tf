@@ -12,19 +12,19 @@ variable "guarduty_finding_publishing_frequency" {
 
 variable "guarduty_s3_protection_enabled" {
   type        = bool
-  default     = true // false
+  default     = false
   description = "Whether to enable GuardDuty S3 protection or not."
 }
 
 variable "guarduty_kubernetes_protection_enabled" {
   type        = bool
-  default     = true // false
+  default     = false
   description = "Whether to enable Kubernetes protection or not."
 }
 
 variable "guarduty_malware_protection_enabled" {
   type        = bool
-  default     = true // false
+  default     = false
   description = "Whether to enable Malware protection or not."
 }
 
