@@ -38,9 +38,9 @@ No modules.
 | <a name="input_guardduty_organization_members_s3_protection_auto_enable"></a> [guardduty\_organization\_members\_s3\_protection\_auto\_enable](#input\_guardduty\_organization\_members\_s3\_protection\_auto\_enable) | Whether to automatically enable GuardDuty S3 protection on organization members or not. | `bool` | `false` | no |
 | <a name="input_guarduty_enabled"></a> [guarduty\_enabled](#input\_guarduty\_enabled) | Whether to enable GuardDuty or not. | `bool` | `true` | no |
 | <a name="input_guarduty_finding_publishing_frequency"></a> [guarduty\_finding\_publishing\_frequency](#input\_guarduty\_finding\_publishing\_frequency) | The frequency of findings publishing. | `string` | `"SIX_HOURS"` | no |
-| <a name="input_guarduty_kubernetes_protection_enabled"></a> [guarduty\_kubernetes\_protection\_enabled](#input\_guarduty\_kubernetes\_protection\_enabled) | Whether to enable Kubernetes protection or not. | `bool` | `true` | no |
-| <a name="input_guarduty_malware_protection_enabled"></a> [guarduty\_malware\_protection\_enabled](#input\_guarduty\_malware\_protection\_enabled) | Whether to enable Malware protection or not. | `bool` | `true` | no |
-| <a name="input_guarduty_s3_protection_enabled"></a> [guarduty\_s3\_protection\_enabled](#input\_guarduty\_s3\_protection\_enabled) | Whether to enable GuardDuty S3 protection or not. | `bool` | `true` | no |
+| <a name="input_guarduty_kubernetes_protection_enabled"></a> [guarduty\_kubernetes\_protection\_enabled](#input\_guarduty\_kubernetes\_protection\_enabled) | Whether to enable Kubernetes protection or not. | `bool` | `false` | no |
+| <a name="input_guarduty_malware_protection_enabled"></a> [guarduty\_malware\_protection\_enabled](#input\_guarduty\_malware\_protection\_enabled) | Whether to enable Malware protection or not. | `bool` | `false` | no |
+| <a name="input_guarduty_s3_protection_enabled"></a> [guarduty\_s3\_protection\_enabled](#input\_guarduty\_s3\_protection\_enabled) | Whether to enable GuardDuty S3 protection or not. | `bool` | `false` | no |
 
 ## Outputs
 
