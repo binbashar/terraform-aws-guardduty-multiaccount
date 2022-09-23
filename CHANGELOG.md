@@ -7,6 +7,14 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.2.1"></a>
+## [v0.2.1] - 2022-09-23
+
+- Update scope to path for current changes
+- Add reference to AWS Documentation & binbash RefArch Repository into README example
+- Update readme example code reference
+
+
 <a name="v0.2.0"></a>
 ## [v0.2.0] - 2022-09-21
 
@@ -170,7 +178,8 @@ All notable changes to this project will be documented in this file.
 - Initial commit
 
 
-[Unreleased]: https://github.com/binbashar/terraform-aws-guardduty-multiaccount/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/binbashar/terraform-aws-guardduty-multiaccount/compare/v0.2.1...HEAD
+[v0.2.1]: https://github.com/binbashar/terraform-aws-guardduty-multiaccount/compare/v0.2.0...v0.2.1
 [v0.2.0]: https://github.com/binbashar/terraform-aws-guardduty-multiaccount/compare/v0.1.1...v0.2.0
 [v0.1.1]: https://github.com/binbashar/terraform-aws-guardduty-multiaccount/compare/v0.0.12...v0.1.1
 [v0.0.12]: https://github.com/binbashar/terraform-aws-guardduty-multiaccount/compare/v0.1.0...v0.0.12
