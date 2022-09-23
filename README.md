@@ -27,11 +27,20 @@ IMPORTANT: designating a GuardDuty delegate admin account will automatically
 enable GuardDuty in that account.
 
 ```terraform
+#
+# We must first enable GuardDuty in the root account so it can be enabled
+# later from GuardDuty's delegated admin.
+#
+# Also designate Security account as GuardDuty's delegated admin
+#
 module "guardduty" {
   source = "github.com/binbashar/terraform-aws-guardduty-multiaccount.git//guardduty-delegated-admin"
 
-  guarduty_enabled                     = true
-  guardduty_delegated_admin_account_id = 111111111111
+  guarduty_enabled                       = true
+  guarduty_s3_protection_enabled         = true
+  guarduty_kubernetes_protection_enabled = true
+  guarduty_malware_protection_enabled    = true
+  guardduty_delegated_admin_account_id   = 111111111111
 }
 ```
 
@@ -44,12 +53,31 @@ enables GuardDuty in that account, you will need to import
 "module.guardduty.aws_guardduty_detector.this" before you can properly use
 this example.
 
+In order to enable Malware Protection from the delegated Admin account,
+make sure you have activated at the organizational level
+the Service Principal: malware-protection.guardduty.amazonaws.com
+- Reference document: [malware-protection]
+- Leverage Reference Architecture: [Terraform Code Reference]
+
 ```terraform
+#
+# GuardDuty is enabled in this account as a delegated admin
+#
 module "guardduty" {
   source = "github.com/binbashar/terraform-aws-guardduty-multiaccount.git//multiaccount-setup"
 
-  guarduty_enabled                           = true
-  guardduty_organization_members_auto_enable = false
+  # Activating Guardduty & S3 protection in this account (security-account).
+  guarduty_enabled                       = true
+  guarduty_s3_protection_enabled         = true
+  guarduty_kubernetes_protection_enabled = true
+  guarduty_malware_protection_enabled    = true
+
+  # New Org Accounts will have Guardduty & S3 Protection automatically enabled
+  guardduty_organization_members_auto_enable                    = true
+  guardduty_organization_members_s3_protection_auto_enable      = true
+  guardduty_organization_members_kubernetes_protection_enable   = true
+  guardduty_organization_members_malware_protection_auto_enable = true
+
   guardduty_member_accounts = {
     shared = {
       account_id = 222222222222
@@ -186,3 +214,5 @@ docker run --rm -v /home/delivery/Binbash/repos/Leverage/terraform/terraform-aws
 
 
 [aws-cli]: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+[malware-protection]: https://docs.aws.amazon.com/guardduty/latest/ug/malware-protection
+[Terraform Code Reference]: https://github.com/binbashar/le-tf-infra-aws/blob/master/management/global/organizations/organization.tf#L6
