@@ -19,24 +19,24 @@ resource "aws_guardduty_detector_feature" "this" {
   dynamic "additional_configuration" {
     for_each = each.key == "RUNTIME_MONITORING" ? [1] : []
     content {
-        name   = "EKS_ADDON_MANAGEMENT"
-        status = "ENABLED"
+      name   = "EKS_ADDON_MANAGEMENT"
+      status = "ENABLED"
     }
   }
 
   dynamic "additional_configuration" {
     for_each = each.key == "RUNTIME_MONITORING" ? [1] : []
     content {
-        name   = "ECS_FARGATE_AGENT_MANAGEMENT"
-        status = "ENABLED"
+      name   = "ECS_FARGATE_AGENT_MANAGEMENT"
+      status = "ENABLED"
     }
   }
 
   dynamic "additional_configuration" {
     for_each = each.key == "RUNTIME_MONITORING" ? [1] : []
     content {
-        name   = "EC2_AGENT_MANAGEMENT"
-        status = "ENABLED"
+      name   = "EC2_AGENT_MANAGEMENT"
+      status = "ENABLED"
     }
   }
 }
@@ -45,7 +45,7 @@ resource "aws_guardduty_detector_feature" "this" {
 # organization member accounts
 resource "aws_guardduty_organization_configuration" "this" {
   auto_enable_organization_members = var.auto_enable_organization_members
-  detector_id = aws_guardduty_detector.this.id
+  detector_id                      = aws_guardduty_detector.this.id
 }
 
 resource "aws_guardduty_organization_configuration_feature" "this" {
@@ -58,24 +58,24 @@ resource "aws_guardduty_organization_configuration_feature" "this" {
   dynamic "additional_configuration" {
     for_each = each.key == "EKS_ADDON_MANAGEMENT" ? [1] : []
     content {
-        name   = "EKS_ADDON_MANAGEMENT"
-        auto_enable = var.auto_enable_organization_members
+      name        = "EKS_ADDON_MANAGEMENT"
+      auto_enable = var.auto_enable_organization_members
     }
   }
 
   dynamic "additional_configuration" {
     for_each = each.key == "EKS_ADDON_MANAGEMENT" ? [1] : []
     content {
-        name   = "ECS_FARGATE_AGENT_MANAGEMENT"
-        auto_enable = var.auto_enable_organization_members
+      name        = "ECS_FARGATE_AGENT_MANAGEMENT"
+      auto_enable = var.auto_enable_organization_members
     }
   }
 
   dynamic "additional_configuration" {
     for_each = each.key == "RUNTIME_MONITORING" ? [1] : []
     content {
-        name   = "EC2_AGENT_MANAGEMENT"
-        auto_enable = var.auto_enable_organization_members
+      name        = "EC2_AGENT_MANAGEMENT"
+      auto_enable = var.auto_enable_organization_members
     }
   }
 }
