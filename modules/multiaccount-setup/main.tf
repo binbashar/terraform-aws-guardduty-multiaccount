@@ -7,23 +7,15 @@ resource "aws_guardduty_detector" "this" {
   enable                       = var.guarduty_enabled
   finding_publishing_frequency = var.guarduty_finding_publishing_frequency
 
-  datasources {
-    s3_logs {
-      enable = var.guarduty_s3_protection_enabled
-    }
-    kubernetes {
-      audit_logs {
-        enable = var.guarduty_kubernetes_protection_enabled
-      }
-    }
-    malware_protection {
-      scan_ec2_instance_with_findings {
-        ebs_volumes {
-          enable = var.guarduty_malware_protection_enabled
-        }
-      }
-    }
-  }
+}
+
+resource "aws_guardduty_detector_feature" "this" {
+  for_each = toset(var.guardduty_features)
+
+  detector_id = aws_guardduty_detector.this.id
+  name        = each.key
+  status      = "ENABLED"
+
 }
 
 # Set auto_enable to true if you want GuardDuty to be enabled in all of your
