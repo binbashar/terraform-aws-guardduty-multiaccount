@@ -16,6 +16,29 @@ resource "aws_guardduty_detector_feature" "this" {
   name        = each.key
   status      = "ENABLED"
 
+  dynamic "additional_configuration" {
+    for_each = each.key == "EKS_RUNTIME_MONITORING" ? [1] : []
+    content {
+        name   = "EKS_ADDON_MANAGEMENT"
+        status = "ENABLED"
+    }
+  }
+
+  dynamic "additional_configuration" {
+    for_each = each.key == "RUNTIME_MONITORING" ? [1] : []
+    content {
+        name   = "ECS_FARGATE_AGENT_MANAGEMENT"
+        status = "ENABLED"
+    }
+  }
+
+  dynamic "additional_configuration" {
+    for_each = each.key == "RUNTIME_MONITORING" ? [1] : []
+    content {
+        name   = "EC2_AGENT_MANAGEMENT"
+        status = "ENABLED"
+    }
+  }
 }
 
 # Set auto_enable to true if you want GuardDuty to be enabled in all of your
