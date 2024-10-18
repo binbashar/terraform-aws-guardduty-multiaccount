@@ -57,3 +57,15 @@ variable "guardduty_member_accounts" {
   default     = []
   description = "A collection of key-pairs that hold data about member accounts such as account_id, email and invite."
 }
+
+variable "guardduty_features" {
+  type        = list(string)
+  default     = []
+  description = "Specifies the features to enable "
+}
+
+variable "auto_enable_organization_members" {
+  type        = string
+  default     = "NONE"
+  description = "Whether to automatically enable GuardDuty on organization members or not."
+}

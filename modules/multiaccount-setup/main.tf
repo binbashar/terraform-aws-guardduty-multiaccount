@@ -7,21 +7,36 @@ resource "aws_guardduty_detector" "this" {
   enable                       = var.guarduty_enabled
   finding_publishing_frequency = var.guarduty_finding_publishing_frequency
 
-  datasources {
-    s3_logs {
-      enable = var.guarduty_s3_protection_enabled
+}
+
+resource "aws_guardduty_detector_feature" "this" {
+  for_each = toset(var.guardduty_features)
+
+  detector_id = aws_guardduty_detector.this.id
+  name        = each.key
+  status      = "ENABLED"
+
+  dynamic "additional_configuration" {
+    for_each = each.key == "RUNTIME_MONITORING" ? [1] : []
+    content {
+      name   = "EKS_ADDON_MANAGEMENT"
+      status = "ENABLED"
     }
-    kubernetes {
-      audit_logs {
-        enable = var.guarduty_kubernetes_protection_enabled
-      }
+  }
+
+  dynamic "additional_configuration" {
+    for_each = each.key == "RUNTIME_MONITORING" ? [1] : []
+    content {
+      name   = "ECS_FARGATE_AGENT_MANAGEMENT"
+      status = "ENABLED"
     }
-    malware_protection {
-      scan_ec2_instance_with_findings {
-        ebs_volumes {
-          enable = var.guarduty_malware_protection_enabled
-        }
-      }
+  }
+
+  dynamic "additional_configuration" {
+    for_each = each.key == "RUNTIME_MONITORING" ? [1] : []
+    content {
+      name   = "EC2_AGENT_MANAGEMENT"
+      status = "ENABLED"
     }
   }
 }
@@ -29,25 +44,38 @@ resource "aws_guardduty_detector" "this" {
 # Set auto_enable to true if you want GuardDuty to be enabled in all of your
 # organization member accounts
 resource "aws_guardduty_organization_configuration" "this" {
-  auto_enable = var.guardduty_organization_members_auto_enable
+  auto_enable_organization_members = var.auto_enable_organization_members
+  detector_id                      = aws_guardduty_detector.this.id
+}
+
+resource "aws_guardduty_organization_configuration_feature" "this" {
+  for_each = toset(var.guardduty_features)
+
   detector_id = aws_guardduty_detector.this.id
+  name        = each.key
+  auto_enable = var.auto_enable_organization_members
 
-  datasources {
-    s3_logs {
-      auto_enable = var.guardduty_organization_members_s3_protection_auto_enable
+  dynamic "additional_configuration" {
+    for_each = each.key == "EKS_ADDON_MANAGEMENT" ? [1] : []
+    content {
+      name        = "EKS_ADDON_MANAGEMENT"
+      auto_enable = var.auto_enable_organization_members
     }
+  }
 
-    kubernetes {
-      audit_logs {
-        enable = var.guardduty_organization_members_kubernetes_protection_enable
-      }
+  dynamic "additional_configuration" {
+    for_each = each.key == "EKS_ADDON_MANAGEMENT" ? [1] : []
+    content {
+      name        = "ECS_FARGATE_AGENT_MANAGEMENT"
+      auto_enable = var.auto_enable_organization_members
     }
-    malware_protection {
-      scan_ec2_instance_with_findings {
-        ebs_volumes {
-          auto_enable = var.guardduty_organization_members_malware_protection_auto_enable
-        }
-      }
+  }
+
+  dynamic "additional_configuration" {
+    for_each = each.key == "RUNTIME_MONITORING" ? [1] : []
+    content {
+      name        = "EC2_AGENT_MANAGEMENT"
+      auto_enable = var.auto_enable_organization_members
     }
   }
 }
