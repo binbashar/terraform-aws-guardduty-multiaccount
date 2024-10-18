@@ -63,3 +63,9 @@ variable "guardduty_features" {
   default     = []
   description = "Specifies the features to enable "
 }
+
+variable "auto_enable_organization_members" {
+  type        = string
+  default     = "NONE"
+  description = "Whether to automatically enable GuardDuty on organization members or not."
+}
